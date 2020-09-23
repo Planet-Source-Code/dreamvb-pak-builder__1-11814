@@ -1,0 +1,18 @@
+Replace Text
+
+Place code into a command button and add a textbox on a new form
+
+Dim StartPos, Counter As Integer
+Dim FindString, ReplaceText As String
+FindString = "test"
+ReplaceText = "MyString"
+
+For Counter = 1 To Len(Text1.Text)
+        StartPos = InStr(Text1.Text, FindString)
+            If StartPos > 0 Then
+                    Text1.SelStart = StartPos - 1
+                    Text1.SelLength = Len(FindString)
+                    Text1.SelText = "" + ReplaceText
+            End If
+    Next
+

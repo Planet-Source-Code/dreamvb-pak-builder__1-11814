@@ -1,0 +1,36 @@
+Get tag info form a mp3 file 
+
+Place five text boxes on to a new form and a command button and paste the code below into the general declarations selection of the form then Press F5.
+
+Private Type Mp3Tag
+    Title As String * 30
+    Artist As String * 30
+    Album As String * 30
+    Year As String * 4
+    Comment As String * 30
+End Type
+
+Private Sub Form_Load()
+Dim TagInfo As Mp3Tag
+Dim FileNum As Integer
+Dim Tag As String * 3
+FileNum = FreeFile
+    Open "c:\Demo.mp3" For Binary As FileNum
+    Seek #FileNum, LOF(FileNum) - 127
+    Get #FileNum, , Tag
+If Tag = "TAG" Then
+    Get #FileNum, , TagInfo.Title
+    Get #FileNum, , TagInfo.Artist
+    Get #FileNum, , TagInfo.Album
+    Get #FileNum, , TagInfo.Year
+    Get #FileNum, , TagInfo.Comment
+End If
+Close #FileNum
+
+Text1.Text = Trim(TagInfo.Title)
+Text2.Text = Trim(TagInfo.Artist)
+Text3.Text = Trim(TagInfo.Album)
+Text4.Text = Trim(TagInfo.Year)
+Text5.Text = Trim(TagInfo.Comment)
+
+End Sub

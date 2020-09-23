@@ -1,0 +1,22 @@
+
+' RGB to Hex
+' Place the code below in to the General Declarations selection of a new form
+' You will aslo need to add a command button named command 1 and a commondialog control named commondialog1 and press F5
+
+Function RGBtoHEX(RGBValue)
+Dim B As Integer
+    a = Hex(RGBValue)
+    B = Len(a)
+    If B = 5 Then a = "0" & a
+    If B = 4 Then a = "00" & a
+    If B = 3 Then a = "000" & a
+    If B = 2 Then a = "0000" & a
+    If B = 1 Then a = "00000" & a
+    RGBtoHEX = a
+End Function
+
+Private Sub Command1_Click()
+ CommonDialog1.ShowColor
+  MsgBox RGBtoHEX(CommonDialog1.Color)
+  
+End Sub

@@ -1,0 +1,9 @@
+Center a form on the screen
+
+Place this code into a new command button on your new form 
+
+With Form1
+    .Top = (Screen.Height - .Height) / 2
+    .Left = (Screen.Width - .Width) / 2
+End With 
+

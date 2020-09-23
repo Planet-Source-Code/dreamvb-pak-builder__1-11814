@@ -1,0 +1,18 @@
+Strip a filename form a path
+
+place code into a command button
+
+ 
+
+Dim StartPos,I As Integer
+Dim Filename, NewFilename As String
+    Filename = "C:\Windows\Utiles\Notpad.exe"
+    For I = 1 To Len(Filename)
+    ch = Mid(Filename, I, 1)
+    If ch = "\" Then
+        StartPos = I
+    End If
+    Next
+        NewFilename = Mid(Filename, StartPos + 1, Len(Filename))
+         MsgBox "The Filename is [" & NewFilename & "]"
+

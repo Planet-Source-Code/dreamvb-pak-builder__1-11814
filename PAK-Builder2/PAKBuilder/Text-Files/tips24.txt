@@ -1,0 +1,17 @@
+
+' Drag and Drop files into a listbox form anywere
+' Ok Start a new project and add a listbox control
+' and set it's dragMode to Automatic now place this code
+' into the List1_OLEDragDrop sub and press F5 and
+' Drag item form your c drive and drop them on the listbox
+
+Dim ItemCount As Integer
+Dim I As Integer
+
+On Error Resume Next
+ItemCount = Data.Files.Count
+
+For I = 1 To ItemCount
+    List1.AddItem Data.Files(I)
+Next
+    If Err Then Err.Clear

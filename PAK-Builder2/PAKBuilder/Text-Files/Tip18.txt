@@ -1,0 +1,30 @@
+make Dir new Function added
+
+Public Function GradePic(Bar As PictureBox)
+Sub MakeDir(FolderName As String)
+Dim Msg
+Dim StrWord As Variant
+Dim Main As String
+Dim Folders As String
+Dim I As Integer
+
+On Error Resume Next
+
+If Right(FolderName, 1) = "\" Then
+        FolderName = Left(FolderName, Len(FolderName) - 1) ' Remove leading BackSlash form folder name
+End If
+
+StrWord = Split(FolderName, "\") ' Split up all the folder names
+For I = 0 To UBound(StrWord)
+        Main = StrWord(0) ' Get the main drive name
+        For j = 1 To UBound(StrWord)
+                Folders = Folders + "\" + StrWord(j) ' Build folder and add backslash were needed
+                MkDir Main + Folders ' Create folders
+        Next
+Exit Sub
+        Next
+            If Err Then Err.Clear ' Clear any errors
+
+End Sub
+Place code into a command button
+MakeDir "C:\cool\dir\function\in\vb"
