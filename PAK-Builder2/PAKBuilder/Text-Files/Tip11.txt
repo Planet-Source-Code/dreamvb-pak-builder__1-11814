@@ -1,0 +1,15 @@
+Fast file copy file
+
+place code into a command button
+
+ 
+
+Dim mByte() As Byte
+    Open "C:\Command.com" For Binary As #1
+    Open "C:\Backup.com" For Binary As #2
+    ReDim mByte(0 To LOF(1))
+        Get #1, , mByte()
+        Put #2, , mByte()
+        Close #1
+            Close #2
+                MsgBox "Done", vbInformation

@@ -1,0 +1,12 @@
+Open a form in random positions 
+
+place code into the form load and press F5
+
+Dim Xpos, Ypos As Integer
+Dim Mess As Integer
+Randomize
+    Mess = Int(Rnd * 5)
+        If Mess = 5 Then Mess = 0
+            Xpos = (Screen.Width - Form1.Width - 1) * Rnd + 1
+            Ypos = (Screen.Height - Form1.Height - 1) * Rnd + 1
+            Form1.Move Xpos, Ypos 

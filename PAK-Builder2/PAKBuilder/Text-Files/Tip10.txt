@@ -1,0 +1,17 @@
+Print 3D Graded text on a form
+
+place code into a command button
+
+ 
+
+Dim I As Integer
+For I = 1 To 255
+    Form1.ScaleMode = 3
+    Form1.Font.Name = "Times New Roman"
+    Form1.Font.Size = 24
+    Form1.CurrentX = I / 15
+    Form1.CurrentY = I / 15
+    Form1.ForeColor = RGB(I + 5, I + 5, I + 5)
+    Form1.Print "Cool 3D Text in VB"
+Next
+

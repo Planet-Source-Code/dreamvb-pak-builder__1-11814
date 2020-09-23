@@ -1,0 +1,21 @@
+' A beginners way to write and Save setting to the Registry
+' Start a new project and add two command buttons adn two text boxes to a form named
+' and place this code into the general Declartions selecion
+' of the form and Press F5
+ 
+Private Sub Command1_Click()
+	SaveSetting "MyString", "New", "Test", Text1.Text
+
+End Sub
+
+Private Sub Command2_Click()
+	Text2.Text = GetSetting("MyString", "New", "Test", vbNullString)
+
+End Sub
+
+Private Sub Form_Load()
+	Text1.Text = "This is a Test"
+	Command1.Caption = "Write Value"
+	Command2.Caption = "Read Value"
+
+End Sub

@@ -1,0 +1,31 @@
+Remove a Record from an Array
+
+Place this code into the general declarations of a new form
+
+ 
+
+Private Type my_type
+    field1 As String
+    field2 As Long
+    field3 As Integer
+End Type
+
+Const MAX_ARRAY = 10
+Dim strBuffer(0 To MAX_ARRAY - 1) As my_type
+Public Sub DeleteRecordFromMyArray(RecPos As Integer, MaxRecs As Integer)
+Dim I As Integer
+
+For I = RecPos To MaxRecs - 1
+    strBuffer(I) = strBuffer(I + 1)
+Next
+
+strBuffer(MaxRecs).field1 = ""
+strBuffer(MaxRecs).field2 = 0
+strBuffer(MaxRecs).field3 = 0
+
+
+End Sub
+
+Place code into a command button
+    DeleteRecordFromMyArray 3, MAX_ARRAY - 1
+

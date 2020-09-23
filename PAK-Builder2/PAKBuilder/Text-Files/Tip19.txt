@@ -1,0 +1,12 @@
+Exit a from in style
+Place code into a command button
+
+Do While Me.Width > 1800
+    Me.Width = Me.Width - 300
+    Me.Left = Me.Left + 150
+            If Me.Height - 400 Then
+                    Me.Top = Me.Top - 1
+                    Me.Height = Me.Height - 150
+            End If
+            Loop
+            Unload Form1: End

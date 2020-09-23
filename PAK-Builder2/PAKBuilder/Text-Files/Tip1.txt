@@ -1,0 +1,16 @@
+Tile Picture on a form
+
+Place code into a command button and place a picture box on the form a inset a picture of your choice and press F5 
+
+Dim X, Y, I, J As Single
+I = Picture1.ScaleWidth
+J = Picture1.ScaleHeight
+Y = 0
+    Do While Y < Form1.ScaleHeight
+    X = 0
+    Do While X < Form1.ScaleWidth
+    PaintPicture Picture1.Picture, X, Y, I, J
+    X = X + I
+    Loop
+    Y = Y + J
+Loop 

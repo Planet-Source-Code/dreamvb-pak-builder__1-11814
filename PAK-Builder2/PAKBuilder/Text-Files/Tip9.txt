@@ -1,0 +1,10 @@
+Fill a combo box with system fonts
+
+Private Sub Command1_Click()
+Dim I As Integer
+    For I = 1 To Screen.FontCount - 1
+    Combo1.AddItem Screen.Fonts(I)
+Next
+
+End Sub
+

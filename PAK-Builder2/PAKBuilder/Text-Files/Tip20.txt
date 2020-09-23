@@ -1,0 +1,27 @@
+Split String Function for VB4,VB5
+
+You will need to add a combo1 box to the new form and place this code into a command button
+
+Dim Counter As Integer
+Dim SplitString, TestString As String
+Dim Msg
+TestString = "Simple,Split,String,Function,In,VisualBasic,"
+If Len(TestString) < 1 Then
+    Exit Sub
+Else
+If Left(TestString, 1) = "," Then
+    TestString = Right(TestString, Len(TestString) - 1)
+End If
+    If Right(TestString, 1) = "," Then
+
+Else
+    TestString = Right(TestString, Len(TestString)) + ","
+End If
+        For Counter = 1 To Len(TestString)
+            ch = Mid(TestString, Counter, 1)
+            SplitString = SplitString + ch
+                If ch = "," Then
+                        Combo1.AddItem Left(SplitString, Len(SplitString) - 1): SplitString = ""
+                End If
+            Next
+    End If

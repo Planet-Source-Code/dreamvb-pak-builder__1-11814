@@ -1,0 +1,13 @@
+Starting another program form VB 
+
+place this code into a command button and press F5
+
+Dim Res
+Dim Filename
+    Filename = "C:\windows\notepad.exe" 'Check file is here first
+If Dir(Filename) = "" Then
+    MsgBox Filename & " not found", vbInformation
+Else
+    Res = Shell("Start.exe " & Filename, vbHide)
+End If
+

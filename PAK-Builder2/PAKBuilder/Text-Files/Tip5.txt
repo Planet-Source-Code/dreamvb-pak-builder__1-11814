@@ -1,0 +1,27 @@
+A very basic web server Test 
+
+Ok now place a command button on your form. Named command1 and set the caption to Start Server, you will also need to place the Winsock control on the form. Set its name to Winser then paste the code into the general declarations selection of the form. Then Press F5 and click the command button right now run IE or Netscape and type your computer name e.g. http://joe this will then display an output form the code you have just entered in Visual Basic.
+
+
+Private Sub Command1_Click()
+    WinSer.LocalPort = 80
+    WinSer.Listen
+    Command1.Enabled = False
+End Sub
+
+Private Sub WinSer_ConnectionRequest(ByVal requestID As Long)
+    WinSer.Close
+    WinSer.Accept requestID
+End Sub
+
+Private Sub WinSer_DataArrival(ByVal bytesTotal As Long)
+Dim DataSend As String
+    DataSend = "Wow My fist Webserver Test"
+    DataSend = DataSend & vbNewLine & Now
+    WinSer.SendData DataSend
+End Sub
+
+Private Sub WinSer_SendComplete()
+    WinSer.Close
+End Sub
+

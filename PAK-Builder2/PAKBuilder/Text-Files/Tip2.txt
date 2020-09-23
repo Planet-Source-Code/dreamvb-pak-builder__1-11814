@@ -1,0 +1,15 @@
+Delete a file of the system with warring message 
+
+place code into a command button and press F5
+
+Dim Filename As String
+Dim Answer
+Filename = "C:\Test.txt"
+Answer = _
+MsgBox("Are you sure you want to delete " & Filename, _
+vbYesNo)
+If Answer = vbYes Then
+    Kill Filename
+Else
+End If 
+

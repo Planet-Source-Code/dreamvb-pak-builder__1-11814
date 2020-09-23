@@ -1,0 +1,20 @@
+'Html to RGB
+' Place the code into the General declarations selection of a new form
+' Plus also add a command button called command 1 and Press F5
+
+
+Function HTMLtoRGB(HtmlCode As String) As String
+
+If Left(HtmlCode, 1) = "#" Then HtmlCode = Right(HtmlCode, 6)
+    RED = Left(HtmlCode, 2)
+    GREEN = Mid(HtmlCode, 3, 2)
+    BLUE = Right(HtmlCode, 2)
+    RgbHex = "&H00" + BLUE + GREEN + RED
+    HTMLtoRGB = "&" & Val(RgbHex)
+    
+End Function
+
+Private Sub Command1_Click()
+    MsgBox HTMLtoRGB("0000FF")
+    
+End Sub

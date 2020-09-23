@@ -1,0 +1,24 @@
+Count words the number of words in a textbox
+
+Place code into a command button and add a textbox to the new form
+
+
+Dim Counter As Integer
+Dim StartPos As Integer
+If Trim(Text1) = "" Then
+    NumOfWords = 0
+    Exit Sub
+End If
+
+Text1 = Trim(Text1) ' Remove All Spaces
+While InStr(1, Text1, " ") > 0 'Remove Double Spaces
+    StartPos = InStr(1, Text1, " ")
+    Text1 = Mid(Text1, 1, StartPos - 1) & Mid(Text1, StartPos + 1, Len(Text1) - StartPos)
+    Wend
+        NumOfWords = 1
+        For Counter = 1 To Len(Text1)
+        If Mid(Text1, Counter, 1) = " " Then NumOfWords = NumOfWords + 1
+        Next Counter
+        MsgBox "Found " & NumOfWords & " Words"
+
+

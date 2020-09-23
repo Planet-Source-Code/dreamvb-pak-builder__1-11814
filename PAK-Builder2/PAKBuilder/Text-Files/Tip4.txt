@@ -1,0 +1,14 @@
+Fill List Box with paths and Filenames
+
+Place code into a command button on a new form and with one list box and Press F5 and Click the command button 
+
+Dim TPath As String
+Dim Filename As String
+    TPath = "C:\Windows\"
+    Filename = Dir(TPath)
+Do While Filename <> ""
+    Filename = Dir
+    List1.AddItem TPath & Filename
+Loop
+
+

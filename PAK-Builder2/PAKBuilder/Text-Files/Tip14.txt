@@ -1,0 +1,17 @@
+Save contents of a list box to a text file
+
+place code into a command button and put a list box onto a new form
+
+ 
+
+Dim I As Integer
+    List1.AddItem "This is test 1"
+    List1.AddItem "This is test 2"
+    List1.AddItem "This is test 3"
+    List1.AddItem "This is test 4"
+
+Open "C:\list.txt" For Append As #1
+    For I = 0 To List1.ListCount - 1
+        Print #1, List1.List(I)
+    Next
+Close #1

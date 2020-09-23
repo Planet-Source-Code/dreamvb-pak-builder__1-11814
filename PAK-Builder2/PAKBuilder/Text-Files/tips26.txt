@@ -1,0 +1,24 @@
+' Serach A listBox for Text
+' Start a new project and add a TextBox and a Listbox to
+' the new Form now goto the project menu and select add Module Click Open
+' Now place this code into the new module
+
+Declare Function SendMessage Lib "user32" Alias "SendMessageA" (ByVal hwnd As _
+Long, ByVal wMsg As Long, ByVal wParam As Integer, ByVal lParam As Any) As Long
+Public Const LB_FINDSTRING = &H18F
+
+'Ok now place this code into the form load event
+
+    List1.AddItem "Microsoft"
+    List1.AddItem "Borland"
+    List1.AddItem "Intel"
+    List1.AddItem "I.B.M"
+    
+
+' Add this code to the textbox on keyperess
+' Press F5 type something in the text box and press Enter
+
+If KeyAscii = 13 Then
+    List1.ListIndex = SendMessage(List1.hwnd, LB_FINDSTRING, -1, ByVal CStr(Text1.Text))
+End If
+
